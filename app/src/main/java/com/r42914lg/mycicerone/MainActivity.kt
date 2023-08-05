@@ -21,6 +21,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        MyApp.INSTANCE.router.navigateTo(Screens.FragmentOne("Splash screen..."))
+        MyApp.INSTANCE.router.navigateTo(Screens.fragmentOne("Splash screen..."))
     }
 }

@@ -7,10 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import androidx.fragment.app.viewModels
 
 private const val ARG_TEXT = "arg_text"
 
 class FragmentTwo : Fragment() {
+
+    private val viewModel by viewModels<FragTwoViewModel>()
     private var message: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,7 +35,10 @@ class FragmentTwo : Fragment() {
 
         view.findViewById<TextView>(R.id.message).text = message
         view.findViewById<Button>(R.id.btn).setOnClickListener {
-            MyApp.INSTANCE.router.navigateTo(Screens.FragmentOne("Back from Fragment #2"))
+            viewModel.onNextScreen()
+        }
+        view.findViewById<Button>(R.id.btn_2).setOnClickListener {
+            viewModel.onOtherActivity()
         }
     }
 

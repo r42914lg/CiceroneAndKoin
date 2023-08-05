@@ -28,7 +28,7 @@ class MyApp : Application() {
 }
 
 object Screens {
-    fun FragmentOne(title: String) = FragmentScreen { FragmentOne.newInstance(title) }
-    fun FragmentTwo(text: String) = FragmentScreen { FragmentTwo.newInstance(text) }
-    fun OtherActivity(ctx: Context) = ActivityScreen { Intent(ctx, OtherActivity::class.java)  }
+    fun fragmentOne(title: String) = FragmentScreen { FragmentOne.newInstance(title) }
+    fun fragmentTwo(text: String) = FragmentScreen { FragmentTwo.newInstance(text) }
+    fun otherActivity(ctx: Context) = ActivityScreen { Intent(ctx, OtherActivity::class.java)  }
 }
