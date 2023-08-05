@@ -7,13 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
-import androidx.fragment.app.viewModels
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 private const val ARG_TITLE = "arg_title"
 
 class FragmentOne : Fragment() {
 
-    private val viewModel by viewModels<FragOneViewModel>()
+    private val viewModel: FragOneViewModel by viewModel()
     private var title: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {

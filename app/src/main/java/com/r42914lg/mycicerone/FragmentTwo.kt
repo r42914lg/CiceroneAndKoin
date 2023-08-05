@@ -7,13 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
-import androidx.fragment.app.viewModels
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 private const val ARG_TEXT = "arg_text"
 
 class FragmentTwo : Fragment() {
 
-    private val viewModel by viewModels<FragTwoViewModel>()
+    private val viewModel by viewModel<FragTwoViewModel>()
     private var message: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {

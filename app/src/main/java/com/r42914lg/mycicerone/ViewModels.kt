@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModel
 import com.github.terrakok.cicerone.Router
 
 class FragOneViewModel(
-    private val router: Router = MyApp.INSTANCE.router,
+    private val router: Router,
 ) : ViewModel() {
 
     fun onNextScreen() {
@@ -14,8 +14,8 @@ class FragOneViewModel(
 }
 
 class FragTwoViewModel(
-    private val router: Router = MyApp.INSTANCE.router,
-    private val appCtx: Context = MyApp.INSTANCE,
+    private val router: Router,
+    private val appCtx: Context,
 ) : ViewModel() {
 
     fun onNextScreen() {

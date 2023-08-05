@@ -6,6 +6,9 @@ import android.content.Intent
 import com.github.terrakok.cicerone.Cicerone
 import com.github.terrakok.cicerone.androidx.ActivityScreen
 import com.github.terrakok.cicerone.androidx.FragmentScreen
+import org.koin.android.ext.koin.androidContext
+import org.koin.android.ext.koin.androidLogger
+import org.koin.core.context.GlobalContext.startKoin
 
 class MyApp : Application() {
     private val cicerone = Cicerone.create()
@@ -19,6 +22,12 @@ class MyApp : Application() {
     override fun onCreate() {
         super.onCreate()
         INSTANCE = this
+
+        startKoin {
+            androidLogger()
+            androidContext(this@MyApp)
+            modules(appModule)
+        }
     }
 
     companion object {
